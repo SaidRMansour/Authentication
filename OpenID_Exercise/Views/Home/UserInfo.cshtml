@@ -1,0 +1,20 @@
+﻿@using Newtonsoft.Json.Linq
+@model JObject
+
+@{
+    Layout = null; // Sæt til null hvis du ikke bruger en layout fil.
+}
+
+<h2>User Information</h2>
+
+<div>
+    <h4>User Details</h4>
+    <hr />
+    <dl class="row">
+        @foreach (var property in Model.Properties())
+        {
+            <dt class="col-sm-3">@property.Name</dt>
+            <dd class="col-sm-9">@property.Value.ToString()</dd>
+        }
+    </dl>
+</div>
